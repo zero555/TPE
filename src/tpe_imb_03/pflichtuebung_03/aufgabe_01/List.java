@@ -1,6 +1,5 @@
 package tpe_imb_03.pflichtuebung_03.aufgabe_01;
 
-import java.util.LinkedList;
 /**
  * Einfache Datenstruktur zur Verwaltung einer Reihe von Elementen.
  * 

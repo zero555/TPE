@@ -1,33 +1,44 @@
 package tpe_imb_03.pflichtuebung_03.aufgabe_01;
 
-public class Node<T> extends Graph {
+public class Node<T> {
 
 	private String name;
-	private Node<T> wert;
-	private Node<T> child;
+	private T wert;
+	private NodeListImpl<T> child;
 
-	public Node(String name, Node<T> wert) {
+	public Node(String name, T wert, NodeListImpl<T> n) {
+		this(name, wert);
+		this.child = n;
+	}
+
+	public Node(String name, T wert) {
 		this.name = name;
 		this.wert = wert;
+		this.child = new NodeListImpl<T>();
 	}
 
-	public void addChild(Node<T> node) {
-		this.child = node;
+	public void addChild(String name, T wert) {
+		child.add(new Node<T>(name, wert));
 	}
 
-	public Node<T> getChildren(Node<T> node) {
-		if (child.getChildren(node).child.getChildren(child) == null) {
-			return child.getChildren(node);
-		}
+	public void addChild(Node<T> n) {
+		child.add(n);
+	}
 
-		return child.getChildren(child);
+	public NodeList<T> getChildren() {
+		return child;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public Node<T> getValue() {
+	public T getValue() {
 		return wert;
+	}
+
+	@Override
+	public String toString() {
+		return this.getName();
 	}
 }

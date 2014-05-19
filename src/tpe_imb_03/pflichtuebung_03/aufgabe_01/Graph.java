@@ -1,9 +1,13 @@
 package tpe_imb_03.pflichtuebung_03.aufgabe_01;
 
-public class Graph implements SearchStrategy {
+public class Graph<T> implements SearchStrategy {
 
-	private static Node head;
-	private Node node;
+	private Node<T> head;
+	private Node<T> node;
+
+	public Graph(Node<T> n) {
+		this.head = n;
+	}
 
 	@Override
 	public void search(String suche) {
@@ -13,22 +17,21 @@ public class Graph implements SearchStrategy {
 		}
 	}
 
-	public void copyInto(List liste) {
-		liste.addFirst(this.head);
-		liste.add(this.node);
+	public void copyInto(List<T> liste) {
+
 	}
 
-	public void setHead(Node node) {
-		head = node;
+	public void setHead(Node<T> node) {
+
 	}
 
-	public static Node getHead() {
+	public Node<T> getHead() {
 		return head;
+
 	}
 
 	@Override
-	public List getPath() {
-		// TODO Auto-generated method stub
+	public List<T> getPath() {
 		return null;
 	}
 
