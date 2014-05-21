@@ -1,9 +1,9 @@
 package tpe_imb_03.pflichtuebung_03.aufgabe_01;
 
-public interface SearchStrategy {
+public interface SearchStrategy<T> {
 
-	public void search(String s);
+	public NodeList<T> search(T wert, Node<T> node);
 	
-	public List getPath();
+	public NodeList<T> getPath();
 	
 }

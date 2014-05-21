@@ -1,20 +1,18 @@
 package tpe_imb_03.pflichtuebung_03.aufgabe_01;
 
-public class Graph<T> implements SearchStrategy {
+public class Graph<T>  {
 
 	private Node<T> head;
-	private Node<T> node;
 
 	public Graph(Node<T> n) {
 		this.head = n;
 	}
 
-	@Override
-	public void search(String suche) {
-		if (suche.equalsIgnoreCase("Breitensuche")) {
-
-		} else if (suche.equalsIgnoreCase("Tiefenensuche")) {
-		}
+	public NodeList<T> search(SearchStrategy<T> suche,T wert, Node<T> node) {
+		NodeList<T> result= new NodeListImpl<T>();
+		result=suche.search(wert, node);
+		System.out.println(suche.getPath());
+		return result;
 	}
 
 	public void copyInto(List<T> liste) {
@@ -27,12 +25,6 @@ public class Graph<T> implements SearchStrategy {
 
 	public Node<T> getHead() {
 		return head;
-
-	}
-
-	@Override
-	public List<T> getPath() {
-		return null;
 	}
 
 }

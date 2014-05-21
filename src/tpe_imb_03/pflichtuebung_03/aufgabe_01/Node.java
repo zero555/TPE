@@ -6,6 +6,7 @@ public class Node<T> {
 	private T wert;
 	private NodeListImpl<T> child;
 
+
 	public Node(String name, T wert, NodeListImpl<T> n) {
 		this(name, wert);
 		this.child = n;
@@ -25,7 +26,7 @@ public class Node<T> {
 		child.add(n);
 	}
 
-	public NodeList<T> getChildren() {
+	public NodeListImpl<T> getChildren() {
 		return child;
 	}
 
@@ -36,9 +37,9 @@ public class Node<T> {
 	public T getValue() {
 		return wert;
 	}
-
+	
 	@Override
-	public String toString() {
+	public String toString(){
 		return this.getName();
 	}
 }
