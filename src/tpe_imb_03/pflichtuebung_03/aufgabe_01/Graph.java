@@ -11,7 +11,6 @@ public class Graph<T>  {
 	public NodeList<T> search(SearchStrategy<T> suche,T wert, Node<T> node) {
 		NodeList<T> result= new NodeListImpl<T>();
 		result=suche.search(wert, node);
-		System.out.println(suche.getPath());
 		return result;
 	}
 
